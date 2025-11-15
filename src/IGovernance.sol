@@ -12,6 +12,13 @@ contract IGovernance{
         uint256 againstVotes;
     }
 
+    event ProposalCreated(uint256 indexed proposalId, address indexed proposer, 
+    uint256 start, uint256 end, string descriprion);
+    event Voted(uint256 indexed propalId, address indexed voter, bool support);
+    event ProposalClosed(uint256 indexed proposalId, uint256 forVotes, 
+    uint256 againstVotes, bool accepted);
+
     
+
     
 }

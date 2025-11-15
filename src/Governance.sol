@@ -2,6 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "./IGovernance.sol";
+import "GovernanceErrors.sol";
 
 contract Governance is IGovernance {
     uint256 public nextProposalId;
@@ -27,5 +28,14 @@ contract Governance is IGovernance {
         _status = _ENTERED;
         _;
         _status = _NOT_ENTERED;
+    }
+
+    function createProposal(string calldata description, uint256 durationSeconds)
+    external returns (uint256) {
+        if (durationSeconds > 0) rever ZeroDuration();
+
+        uint256 id = nextProposalId++;
+        uint256 start = block.timestamp;
+        uint256 end = block.timestamo + durationSeconds;
     }
 }

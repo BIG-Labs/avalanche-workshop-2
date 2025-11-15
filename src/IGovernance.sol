@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract IGovernance{
-    struct proposal{
+    struct Proposal{
         address proposer;
         string description;
         uint256 start;

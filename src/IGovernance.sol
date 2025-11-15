@@ -14,7 +14,7 @@ contract IGovernance{
 
     event ProposalCreated(uint256 indexed proposalId, address indexed proposer, 
     uint256 start, uint256 end, string descriprion);
-    event Voted(uint256 indexed propalId, address indexed voter, bool support);
+    event Voted(uint256 indexed proposalId, address indexed voter, bool support);
     event ProposalClosed(uint256 indexed proposalId, uint256 forVotes, 
     uint256 againstVotes, bool accepted);
 
@@ -23,7 +23,7 @@ contract IGovernance{
     event StakedLocked(address indexed user, uint256 indexed proposalId, 
     uint256 unlockTime);
 
-    function createProposal(string descriprion, uint256 durationSeconds) 
+    function createProposal(string calldata description, uint256 durationSeconds)
     external returns (uint256);
 
     function vote(uint256 proposalId, bool support) external; 
@@ -31,11 +31,5 @@ contract IGovernance{
 
     function stake() external payable;
     function unstake(uint256 amount) external;
-    
-
-
-
-
-
     
 }

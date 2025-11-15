@@ -18,7 +18,14 @@ contract IGovernance{
     event ProposalClosed(uint256 indexed proposalId, uint256 forVotes, 
     uint256 againstVotes, bool accepted);
 
+    event Staked(address indexed user, uint256 amount);
+    event Unstaked(address indexed user, uint256 amount);
+    event StakedLocked(address indexed user, uint256 indexed proposalId, 
+    uint256 unlockTime);
+
     
+
+
 
     
 }

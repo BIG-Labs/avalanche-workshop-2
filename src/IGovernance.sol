@@ -23,7 +23,17 @@ contract IGovernance{
     event StakedLocked(address indexed user, uint256 indexed proposalId, 
     uint256 unlockTime);
 
+    function createProposal(string descriprion, uint256 durationSeconds) 
+    external returns (uint256);
+
+    function vote(uint256 proposalId, bool support) external; 
+    function closeProposal(uint256 proposalId) external; 
+
+    function stake() external payable;
+    function unstake(uint256 amount) external;
     
+
+
 
 
 
